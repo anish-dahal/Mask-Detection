@@ -21,6 +21,8 @@ data/
 We use Transfer learning for mask detection and the network used for the classification is ResNet34
 
 ## ResNet
-Resnet34 is one pre-trained model that is basically a 34-layer convolutional neural network that has been pre-trained using the ImageNet dataset, which contains over 100,000 images from 200 distinct classes. However, it differs from standard neural networks in that it incorporates residuals from each layer in the succeeding connected layers.
+Resnet34 is one pre-trained model that is basically a 34-layer convolutional neural network that has been pre-trained using the ImageNet dataset. The models are trained on the 1.28 million training images, and evaluated on the 50k validation images for 1000 distinct classes. However, it differs from standard neural networks in that it incorporates residuals from each layer in the succeeding connected layers.
+Input size: (3, 224, 224)
 
-Architecture. ([source](https://roboflow.com/model/resnet-34))
+Paper. ([source](https://arxiv.org/pdf/1512.03385.pdf))
+
