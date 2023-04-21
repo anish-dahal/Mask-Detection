@@ -8,6 +8,7 @@ from torch.utils.data import (
 )
 
 torch.manual_seed(100)
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 class MaskDetectionDataSet(Dataset):
     def __init__(self, data_dir):
@@ -19,12 +20,14 @@ class MaskDetectionDataSet(Dataset):
             tt.Normalize([0.5,0.5,0.5],[0.5,0.5,0.5])
             ])
         )
+        self.classes = self.dataset.classes
     
     def __len__(self):
         return len(self.dataset)
     
+    
     def __getitem__(self, index):
-        return self.dataset[index] 
+        return self.dataset[index][0].to(device), torch.tensor(self.dataset[index][1]).to(device)
 
 
 def dataset_split(dataset, val_ratio = 0.2):
