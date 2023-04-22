@@ -15,9 +15,10 @@ class MaskDetectionDataSet(Dataset):
         self.dataset = ImageFolder(
             data_dir,
             tt.Compose([
-            tt.Resize(size=(224,224)),
+            tt.Resize(size=(256, 256)),
+            tt.CenterCrop(224),
             tt.ToTensor(),
-            tt.Normalize([0.5,0.5,0.5],[0.5,0.5,0.5])
+            tt.Normalize([0.485, 0.456, 0.406],[0.229, 0.224, 0.225])
             ])
         )
         self.classes = self.dataset.classes
