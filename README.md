@@ -1,4 +1,4 @@
-Mask-Detection using RestNet
+Mask-Detection using pre-trained RestNet model from pytorch
 
 ## Dataset
 I have created a model that detects face mask trained on 7553 images with 3 color channels (RGB).
@@ -25,4 +25,8 @@ Resnet34 is one pre-trained model that is basically a 34-layer convolutional neu
 Input size: (3, 224, 224)
 
 Paper. ([source](https://arxiv.org/pdf/1512.03385.pdf))
+
+## Demo
+
+MTCNN is used for face detection and the face in the image has been as an input for the model after using transformation which was used to train pre-trained model ResNet34 model.
 
