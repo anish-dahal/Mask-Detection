@@ -1,0 +1,8 @@
+numpy
+torch --index-url https://download.pytorch.org/whl/cu117
+torchvision 
+matplotlib
+torchsummary
+tqdm
+facenet-pytorch
+opencv-python
